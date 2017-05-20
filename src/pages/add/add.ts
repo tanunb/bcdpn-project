@@ -40,7 +40,9 @@ export class Add {
             this.task = editTask;
             this.isNew = false;
             this.action = 'Edit';
-            this.isoDate = this.task.Date.toISOString().slice(0, 10);}*/
+            this.isoDate = this.task.Date.toISOString().slice(0, 10);
+            }
+      */
   }
 
   goBack(){

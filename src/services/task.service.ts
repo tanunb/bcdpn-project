@@ -11,6 +11,7 @@ export class TaskService {
         PouchDB.plugin(cordovaSqlitePlugin);
         this._db = new PouchDB('tasks.db', { adapter: 'cordova-sqlite' });
         window["PouchDB"] = PouchDB;
+        console.log('blll')
     }
 
     add(task) {  
