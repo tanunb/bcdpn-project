@@ -1,0 +1,54 @@
+<ion-header>  
+  <ion-navbar>
+    <ion-title>{{ action }} Task</ion-title>
+
+    <ion-buttons end *ngIf="!isNew">
+      <button ion-button icon-only (click)="delete()">
+          <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="grid">  
+    <ion-list>
+        <ion-item>
+            <ion-label>Task Name</ion-label>
+            <ion-input text-right type="text" [(ngModel)]="name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Task Description</ion-label>
+            <ion-input text-right type="text" [(ngModel)]="description"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Category</ion-label>
+          <ion-select [(ngModel)]="category" selected="true" multiple="true" cancelText="Cancel" okText="Ok">
+        <ion-option value="hw">Homework</ion-option>
+        <ion-option value="pj">Project</ion-option>
+        <ion-option value="pr">Present</ion-option>
+        <ion-option value="qu">Quiz</ion-option>
+      </ion-select>
+        </ion-item>        
+
+        <ion-item>
+            <ion-label>Deadline</ion-label>
+            <ion-datetime displayFormat="MMMM D, YYYY" pickerFormat="MMMM D YYYY" [(ngModel)]="isoDate"></ion-datetime>
+        </ion-item>
+    </ion-list>
+
+    <ion-grid>
+      <ion-row justify-content-around>
+        <ion-col col-3>
+          <button ion-button block (click)="goBack()">Cancel</button>
+        </ion-col>
+
+        <ion-col col-3>
+          <button ion-button block (click)="save()">Save</button>
+        </ion-col>
+      </ion-row>  
+    </ion-grid>
+
+</ion-content> 

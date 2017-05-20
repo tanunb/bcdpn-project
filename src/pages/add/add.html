@@ -1,0 +1,62 @@
+<ion-header>
+	<ion-navbar color="navycolor">
+	<img style="margin:0px auto;display:block" src="assets/logo/bcdlogo.png" height="50">
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+<h2>Add Task</h2>
+	<ion-item>
+		<ion-input placeholder="Name" type="text" [(ngModel)]="task.Name"></ion-input>
+	</ion-item>
+
+	<ion-item>
+		<ion-input placeholder="Description" type="text" [(ngModel)]="task.Description"></ion-input>
+	</ion-item>
+
+	<ion-list>
+		<ion-item>
+			<ion-label>Subject</ion-label>
+			<ion-select [(ngModel)]="Subject" okText="Ok">
+				<ion-option disabled>1st</ion-option>
+      			<ion-option value="nes">NES</ion-option>
+      			<ion-option value="n64">Nintendo64</ion-option>
+      			<ion-option value="ps">PlayStation</ion-option>
+      			<ion-option value="genesis">Sega Genesis</ion-option>
+      			<ion-option value="saturn">Sega Saturn</ion-option>
+      			<ion-option value="snes">SNES</ion-option>
+
+      			
+			</ion-select>
+
+			<!--<button ion-button (click)="goSub()" icon-left outline item-right >
+	    	<ion-icon name="md-create"></ion-icon>
+	    </button>-->
+		</ion-item>
+	</ion-list>
+
+	<ion-list>
+		<ion-item>
+			<ion-label>Category</ion-label>
+			<ion-select [(ngModel)]="task.Category" cancelText="Cancel" okText="Ok">
+				<ion-option value="hw">Homework</ion-option>
+				<ion-option value="pj">Project</ion-option>
+				<ion-option value="pr">Present</ion-option>
+				<ion-option value="qu">Quiz</ion-option>
+			</ion-select>
+		</ion-item>
+	</ion-list>
+
+	<ion-list>
+		<ion-item>
+	  		<ion-label>Due Date</ion-label>
+	  		<ion-datetime displayFormat="MMMM D, YYYY" pickerFormat="MMMM D YYYY" [(ngModel)]="isoDate">
+	  		</ion-datetime>
+		</ion-item>
+	</ion-list>
+
+	<ion-item>
+	<button ion-button large (click)="save()">Add</button>
+	</ion-item>
+
+</ion-content>

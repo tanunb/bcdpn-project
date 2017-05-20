@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="navycolor">
+    <img src="assets/logo/bcdlogo.png" height="50" style="margin:0px auto; display:block">
+    <ion-buttons end>
+      <button ion-button (click)="goToAdd()">
+          <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>  
+    <ion-list inset>
+        <ion-item *ngFor="let task of tasks" (click)="showDetail(task)">
+          <div item-left>{{ task.Name }}</div>
+          <div item> {{ task.Subject }} </div>
+          <div item-right>{{ task.Date | date:'yMMMMd' }}</div>
+        </ion-item>
+    </ion-list>
+</ion-content>  
