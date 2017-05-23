@@ -5,6 +5,7 @@ import { DetailsPage } from '../details/details';
 import { IonicPage, NavParams} from 'ionic-angular';
 import { Add } from '../../pages/add/add';
 
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'

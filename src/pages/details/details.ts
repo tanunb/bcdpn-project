@@ -14,6 +14,7 @@ export class DetailsPage {
     public name = '';
     public category = '';
     public description = '';
+    public subject = '';
 
 
     constructor(private viewCtrl: ViewController,
@@ -32,6 +33,7 @@ export class DetailsPage {
             this.name = this.task.Name
             this.category = this.task.Category
             this.description = this.task.Description
+            this.subject = this.task.Subject
         }
     }
 
@@ -40,6 +42,7 @@ export class DetailsPage {
         this.task.Name = this.name
         this.task.Category = this.category
         this.task.Description = this.description
+        this.task.Subject = this.subject
 
         if (this.isNew) {
             this.taskService.add(this.task)

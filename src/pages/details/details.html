@@ -1,16 +1,18 @@
+<!-- Header -->
 <ion-header>  
   <ion-navbar>
     <ion-title>{{ action }} Task</ion-title>
 
     <ion-buttons end *ngIf="!isNew">
       <button ion-button icon-only (click)="delete()">
-          <ion-icon name="trash"></ion-icon>
+          <ion-icon name="md-checkmark"></ion-icon>
       </button>
     </ion-buttons>
 
   </ion-navbar>
 </ion-header>
 
+<!-- Body -->
 <ion-content class="grid">  
     <ion-list>
         <ion-item>
@@ -24,19 +26,134 @@
         </ion-item>
 
         <ion-item>
-          <ion-label>Category</ion-label>
-          <ion-select [(ngModel)]="category" selected="true" multiple="true" cancelText="Cancel" okText="Ok">
-        <ion-option value="hw">Homework</ion-option>
-        <ion-option value="pj">Project</ion-option>
-        <ion-option value="pr">Present</ion-option>
-        <ion-option value="qu">Quiz</ion-option>
-      </ion-select>
-        </ion-item>        
+          <ion-label>Subject</ion-label>
+          <ion-select [(ngModel)]="subject" okText="Ok">
+            <ion-option disabled>1st Year</ion-option>
+            <!--Semester 1-->
+            <ion-option value="ITCS175">ITCS175 Advanced Mathematics I</ion-option>
+            <ion-option value="ITCS200">ITCS200 Fundamentals of Programming</ion-option>
+            <ion-option value="ITCS320">ITCS320 Discrete Structures</ion-option>
+            <ion-option value="ITGE101">ITGE101 Problem Solving Techniques</ion-option>
+            <ion-option value="ITLG101">ITLG101 Technical English I</ion-option>
+            <ion-option value="SCBI109">SCBI109 Integrated Biology</ion-option>
+            <ion-option value="SHHU116">SHHU116 Comparative Culture</ion-option>
+            <!--Semester 2-->
+            <ion-option value="ITCS125">ITCS125 Applied Statistics for Computing</ion-option>
+            <ion-option value="ITCS161">ITCS161 Physical Science and Computation</ion-option>
+            <ion-option value="ITCS200">ITCS200 Fundamentals of Programming</ion-option>
+            <ion-option value="ITCS208">ITCS208 Object oriented Programming</ion-option>
+            <ion-option value="ITCS211">ITCS211 Introduction to Digital Systems</ion-option>
+            <ion-option value="ITLG102">ITLG102 Technical English II</ion-option>
+            <ion-option value="SCCH100">SCCH100 Integrated Chemistry</ion-option>
+            <ion-option value="SHSS103">SHSS103 Man and Society</ion-option>
+            <ion-option value="SHSS103">SPGE1XX Sport Selective Subject</ion-option>
 
-        <ion-item>
+            <ion-option disabled>2nd Year</ion-option>
+            <!--Semester 1-->
+            <ion-option value="ITCS159">ITCS159 Software Lab for Basic Scientific Problem Solving</ion-option>
+            <ion-option value="ITCS210">ITCS210 Web Programming</ion-option>
+            <ion-option value="ITCS222">ITCS222 Computer Organization and Architecture</ion-option>
+            <ion-option value="ITCS231">ITCS231 Data Structures and Algorithm Analysis</ion-option>
+            <ion-option value="ITCS306">ITCS306 Numerical Method</ion-option>
+            <ion-option value="ITLG201">ITLG201 Reading Skills</ion-option>
+            <ion-option value="ITID27X">ITID27X Business Selective Subject</ion-option>
+            <!--Semester 2-->
+            <ion-option value="ITCS241">ITCS241 Database Management Systems</ion-option>
+            <ion-option value="ITCS323">ITCS323 Computer Data Communication</ion-option>
+            <ion-option value="ITCS335">ITCS335 Introduction to E-business Systems</ion-option>
+            <ion-option value="ITCS343">ITCS343 Principles of Operating Systems</ion-option>
+            <ion-option value="ITCS381">ITCS381 Introduction to Multimedia Systems</ion-option>
+            <ion-option value="ITLG202">ITLG202 Public Speaking and Presentation</ion-option>
+            <ion-option value="ITID27X">ITID27X Business Selective Subject</ion-option>
+
+            <ion-option disabled>3rd Year</ion-option>
+            <!--Semester 1-->
+            <ion-option value="ITCS361">ITCS361 Management Information Systems</ion-option>
+            <ion-option value="ITCS371">ITCS371 Introduction to Software Engineering</ion-option>
+            <ion-option value="ITCS414">ITCS414 Information Storage and Retrieval</ion-option>
+            <ion-option value="ITCS420">ITCS420 Computer Networks</ion-option>
+            <ion-option value="ITCS443">ITCS443 Parallel and Distributed Systems</ion-option>
+            <ion-option value="ITCS451">ITCS451 Artificial Intelligence</ion-option>
+            <ion-option value="ITLG301">ITLG301 Business Writing</ion-option>
+            <!--Semester 2-->
+            <ion-option value="ITCS336">ITCS336 Human Computer Interface</ion-option>
+            <ion-option value="ITCS424">ITCS424 Wireless and Mobile Computing</ion-option>
+            <ion-option value="ITCS461">ITCS461 Computer and Communication Security</ion-option>
+            <ion-option value="ITLG302">ITLG302 Academic Writing</ion-option>
+            <ion-option value="ITCS39X">ITCS39X Selective Lab</ion-option>
+            <ion-option disabled>Mj. CS</ion-option>
+            <ion-option value="ITCS453">ITCS453 Data Warehousing and Data Mining</ion-option>
+            <ion-option value="ITCS413">ITCS413 Database Design</ion-option>
+            <ion-option disabled>Mj. DB</ion-option>
+            <ion-option value="ITCS453">ITCS453 Data Warehousing and Data Mining</ion-option>
+            <ion-option value="ITCS413">ITCS413 Database Design</ion-option>
+            <ion-option disabled>Mj. CN</ion-option>
+            <ion-option value="ITCS422">ITCS422 Local Area Networks</ion-option>
+            <ion-option value="ITCS423">ITCS423 Telecommunications</ion-option>
+            <ion-option disabled>Mj. SE</ion-option>
+            <ion-option value="ITCS472">ITCS472 Software Metrics</ion-option>
+            <ion-option value="ITCS431">ITCS431 Software Design and Development</ion-option>
+            <ion-option disabled>Mj. MS</ion-option>
+            <ion-option value="ITCS367">ITCS367 IT Infrastructure Management</ion-option>
+            <ion-option value="ITCS368">ITCS368 Information and Business Process Management</ion-option>
+            <ion-option disabled>Mj. MM</ion-option>
+            <ion-option value="ITCS481">ITCS481 Computer Graphics</ion-option>
+            <ion-option value="ITCS486">ITCS486 Multimedia Data Technologies</ion-option>
+            <ion-option disabled>Mj. EB</ion-option>
+            <ion-option value="ITCS431">ITCS431 Software Design and Development</ion-option>
+            <ion-option value="ITCS439">ITCS439 E-Customer Relationship Management</ion-option>
+            <ion-option disabled>Mj. HT</ion-option>
+            <ion-option value="ITCS403">ITCS403 Introduction to Healthcare Systems</ion-option>
+            <ion-option value="ITCS453">ITCS453 Data Warehousing and Data Mining</ion-option>
+
+            <ion-option disabled>4th Year</ion-option>
+            <!--Semester 1-->
+            <ion-option value="ITCS402">ITCS402 Computer and Business Ethics</ion-option>
+            <ion-option value="ITGE301">ITGE301 Communication Strategies in Professional Life</ion-option>
+            <ion-option value="ITCS491">ITCS491 Senior Project I</ion-option>
+            <ion-option disabled>Mj. CS</ion-option>
+            <ion-option value="ITCS425">ITCS425 Algorithms</ion-option>
+            <ion-option value="ITCS446">ITCS446 Embedded Systems and Applications</ion-option>
+            <ion-option disabled>Mj. DB</ion-option>
+            <ion-option value="ITCS476">ITCS476 Digital Image Processing</ion-option>
+            <ion-option value="ITCS495">ITCS495 Special Topics in Databases and Intelligent Sys.</ion-option>
+            <ion-option disabled>Mj. CN</ion-option>
+            <ion-option value="ITCS428">ITCS428 Network Programming</ion-option>
+            <ion-option value="ITCS465">ITCS465 Network Management</ion-option>
+            <ion-option disabled>Mj. SE</ion-option>
+            <ion-option value="ITCS379">ITCS379 Practical Software Engineering</ion-option>
+            <ion-option value="ITCS473">ITCS473 Software Quality Assurance and Testing</ion-option>
+            <ion-option disabled>Mj. MS</ion-option>
+            <ion-option value="ITCS365">ITCS365 Information Systems Analysis and Design</ion-option>
+            <ion-option value="ITCS457">ITCS457 Decision Support and Business Intelligent Systems</ion-option>
+            <ion-option disabled>Mj. MM</ion-option>
+            <ion-option value="ITCS483">ITCS483 Computer Animation</ion-option>
+            <ion-option value="ITCS496">ITCS496 Special Topics in Multimedia Systems</ion-option>
+            <ion-option disabled>Mj. EB</ion-option>
+            <ion-option value="ITCS433">ITCS433 Production,Supply Chain and Logistics Management</ion-option>
+            <ion-option value="ITCS457">ITCS457 Decision Support and Business Intelligent Systems</ion-option>
+            <ion-option disabled>Mj. HT</ion-option>
+            <ion-option value="ITCS404">ITCS404 Information Technology for Healthcare Services</ion-option>
+            <ion-option value="ITCS405">ITCS405 Information Models and Information Healthcare Standards</ion-option>
+            <!--Semester 2-->
+            <ion-option value="ITCS492">ITCS492 Senior Projects II</ion-option>
+          </ion-select>
+        </ion-item>
+
+          <ion-item>
+            <ion-label>Category</ion-label>
+            <ion-select [(ngModel)]="category" selected="true" multiple="true" cancelText="Cancel" okText="Ok">
+              <ion-option value="hw">Homework</ion-option>
+              <ion-option value="pj">Project</ion-option>
+              <ion-option value="pr">Presentation</ion-option>
+              <ion-option value="qu">Quiz</ion-option>
+            </ion-select>
+          </ion-item>        
+
+          <ion-item>
             <ion-label>Deadline</ion-label>
             <ion-datetime displayFormat="MMMM D, YYYY" pickerFormat="MMMM D YYYY" [(ngModel)]="isoDate"></ion-datetime>
-        </ion-item>
+          </ion-item>
     </ion-list>
 
     <ion-grid>
@@ -50,5 +167,30 @@
         </ion-col>
       </ion-row>  
     </ion-grid>
-
 </ion-content> 
+
+<!-- 
+
+<ion-list>
+        <ion-item>
+         <ion-label>Subject</ion-label>
+         <ion-select [(ngModel)]="task.Subject" okText="Ok">
+              
+
+         </ion-select>
+        </ion-item>
+       </ion-list>
+
+       <ion-list>
+        <ion-item>
+         <ion-label>Category</ion-label>
+         <ion-select [(ngModel)]="task.Category" cancelText="Cancel" okText="Ok">
+          <ion-option value="hw">Homework</ion-option>
+          <ion-option value="pj">Project</ion-option>
+          <ion-option value="pr">Presentation</ion-option>
+          <ion-option value="qu">Quiz</ion-option>
+         </ion-select>
+        </ion-item>
+       </ion-list>
+
+ -->
